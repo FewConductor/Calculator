@@ -174,18 +174,6 @@ window.addEventListener("keydown", (x) => {
     }
 });
 
-// ! Highlighting current function button
-['click', 'keydown'].forEach((e) => {
-    window.addEventListener(e, () =>
-        operators.forEach((e) => {
-            e.classList.remove('currentFct');
-            if (e.classList[0].slice(0, 4) == currentFunction) {
-                e.classList.add('currentFct')
-            }
-        })
-    )
-})
-
 // ! Code for equals button
 let equals = document.querySelector(".equals");
 
@@ -209,7 +197,18 @@ window.addEventListener("keydown", (x) => {
     }
 });
 
-// // ! Code for the log button (which logs things to the console.log, rather than actually going a log function)
+// ! Highlighting current function button
+['click', 'keydown'].forEach((e) => {
+    window.addEventListener(e, () => {
+        operators.forEach((e) => {
+            e.classList.remove('currentFct');
+            if (e.classList[0].slice(0, 4) == currentFunction) {
+                e.classList.add('currentFct')
+            }
+        })
+    })
+})
+
 // ! Code for the Answer button
 let ans = document.querySelector(".ans");
 
