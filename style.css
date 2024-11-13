@@ -59,6 +59,11 @@ body {
     color: black;
 }
 
+div.currentFct {
+    background-color: #F7CE91;
+    border: 1px black solid;
+}
+
 .display {
     /* font-size: 3rem; */
     display: flex;

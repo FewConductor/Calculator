@@ -7,6 +7,7 @@
 // * Make it so that you can type the numbers on your keyboard
 // * Change the log key to be "current Answer" so that you can multiply by the answer you just got?
 // TODO Optimise code for effect of clicking and typing if possible? - not sure this is doable
+// TODO If you click divide then don't type a number, you get NaN
 
 let display = document.querySelector('.displayContent');
 let displayContainer = document.querySelector(".display");
@@ -172,6 +173,18 @@ window.addEventListener("keydown", (x) => {
         }
     }
 });
+
+// ! Highlighting current function button
+['click', 'keydown'].forEach((e) => {
+    window.addEventListener(e, () =>
+        operators.forEach((e) => {
+            e.classList.remove('currentFct');
+            if (e.classList[0].slice(0, 4) == currentFunction) {
+                e.classList.add('currentFct')
+            }
+        })
+    )
+})
 
 // ! Code for equals button
 let equals = document.querySelector(".equals");
